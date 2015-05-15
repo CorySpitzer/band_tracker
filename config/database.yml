@@ -1,9 +1,9 @@
 development:
   adapter: postgresql
-  database: cookbook
+  database: shows
   template: template0
 
 test:
   adapter: postgresql
-  database: cookbook_test
+  database: shows_test
   template: template0
