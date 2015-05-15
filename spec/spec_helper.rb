@@ -15,7 +15,5 @@ RSpec.configure do |config|
     # Category.all().each() do |category|
     #   category.destroy()
     # end
-
-    end
   end
 end
