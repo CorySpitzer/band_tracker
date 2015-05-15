@@ -28,6 +28,7 @@ end
 
 get('/error') do
   # @error_message = @@error_messages.fetch()
+  erb(:error)
 end
 
 
