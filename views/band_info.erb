@@ -1,2 +1,17 @@
 <h1><%= @band.name %>:</h1>
 <h3><% @band.genre %></h3>
+
+<% if @venues %>
+  <form action="/band/<%= @band.id %>" method='post'>
+    <% @venues.each() do |venue| %>
+      <label for='venue_name'><%= venue.name %></lable>
+      <input type='checkbox' id='venue_name' name='venue_name' value='<%= venue.name %>'/>
+      <br>
+    <% end %>
+    <button type='submit' class='btn-success'>Add Selected</button>
+  </form>
+
+<% else %>
+  <p>There aren't any venues yet.
+  <br>
+<% end %>
