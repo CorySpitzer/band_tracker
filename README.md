@@ -26,6 +26,10 @@ venue_id
 date
 
 
-Setup Instructions: Coming Soon?
+Setup Instructions:
+  * Recreate the db using `rake db:schema:load`
+  * Launch the server with `ruby app.rb`
+  * Visit http://localhost:4567/
+  * Enjoy!
 
 MIT License
