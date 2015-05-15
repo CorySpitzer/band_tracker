@@ -9,7 +9,17 @@ get('/') do
 end
 
 get('/bands') do
+  @bands = Band.all
   erb(:bands)
+end
+
+post('/bands') do
+  band = Band.create(name: params.fetch('band_name'))
+  if band.valid?
+    redirect('/bands')
+  else
+    redirect('/error')
+  end
 end
 
 get('/venues') do
