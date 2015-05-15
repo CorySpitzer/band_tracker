@@ -8,6 +8,13 @@ get('/') do
   erb(:index)
 end
 
+get('/error') do
+  # @error_message = @@error_messages.fetch()
+  erb(:error)
+end
+
+# *** BANDS ***
+
 get('/bands') do
   @bands = Band.all
   erb(:bands)
@@ -21,6 +28,13 @@ post('/bands') do
     redirect('/error')
   end
 end
+
+get('/band/:id') do |id|
+  @band = Band.find(id)
+  erb(:band_info)
+end
+
+# *** VENUES ***
 
 get('/venues') do
   @venues = Venue.all
@@ -36,10 +50,6 @@ post('/venues') do
   end
 end
 
-get('/error') do
-  # @error_message = @@error_messages.fetch()
-  erb(:error)
-end
 
 
 
