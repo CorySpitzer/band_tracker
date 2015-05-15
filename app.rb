@@ -19,7 +19,15 @@ end
 
 post('/venues') do
   venue = Venue.create(name: params.fetch('venue_name'))
-  redirect('/venues')
+  if venue.valid?
+    redirect('/venues')
+  else
+    redirect('/error')
+  end
+end
+
+get('/error') do
+  # @error_message = @@error_messages.fetch()
 end
 
 
