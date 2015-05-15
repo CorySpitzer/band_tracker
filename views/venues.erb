@@ -1,1 +1,26 @@
-<h2>Venues</h2>
+<h2>Venues:</h2>
+
+<%
+=begin %>
+<%
+=end %>
+
+<% if @venues %>
+  <% @venues.each() do |venue| %>
+    <a href="/venue/<%= venue.id() %>"><%= venue.name() %></a>
+    <br>
+  <% end %>
+<% else %>
+  <p>There aren't any venues yet.
+  <br>
+<% end %>
+
+
+<h3>Add a Venue:</h3>
+<form action="/venues" method="post">
+  <div class="form-group">
+    <label for="venue_name">Enter the name of your venue here</label>
+    <input id="venue_name" name="venue_name" class="form-control" type="text">
+  </div>
+  <button type='submit' class='btn-success'>Add</button>
+</form>
