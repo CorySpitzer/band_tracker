@@ -7,4 +7,9 @@ describe(Venue) do
     venue = Venue.new(location: 'NYC')
     expect(venue.save).to eq(false)
   end
+
+  it('it capitalizes all the words in the name') do
+    venue = Venue.create(name: 'the fillmore')
+    expect(venue.name).to eq('The Fillmore')
+  end
 end
